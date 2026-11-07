@@ -1,0 +1,84 @@
+[아직 이미지가 없는 학생 — 이 이름으로 저장해서 넣으면 바로 나옵니다]
+
+· 썸네일  → images/thumbs/<과목폴더>/<파일이름>.jpg
+· 상세이미지 → images/details/<과목폴더>/<파일이름>.jpg
+  (썸네일과 상세이미지는 파일이름이 같고, 폴더만 다릅니다)
+
+과목폴더: brand=브랜드, content=콘텐츠, comm=커뮤니케이션, video=영상
+규칙: 영문이름 소문자, 성과 이름 사이는 - , 2인 팀은 영문이름 알파벳순으로 _ 로 연결, 확장자는 .jpg
+
+■ 브랜드 (brand)
+  고보경        → ko-bogyeong.jpg
+  강은주        → kang-eunju.jpg
+  김선아        → kim-seona.jpg
+  김채은        → kim-chaeeun.jpg
+  박시연        → park-siyeon.jpg
+  반가인        → ban-gain.jpg
+  백지윤        → baek-jiyoun.jpg
+  이고은        → lee-goeun.jpg
+  정윤서        → jeong-yoonseo.jpg
+  한호정        → han-hojeong.jpg
+
+■ 콘텐츠 (content)
+  고보경        → ko-bogyeong.jpg
+  강은주        → kang-eunju.jpg
+  김선아        → kim-seona.jpg
+  김채은        → kim-chaeeun.jpg
+  박시연        → park-siyeon.jpg
+  반가인        → ban-gain.jpg
+  이고은        → lee-goeun.jpg
+  정윤서        → jeong-yoonseo.jpg
+  한호정        → han-hojeong.jpg
+  백지윤        → baek-jiyoun.jpg
+
+■ 커뮤니케이션 (comm)
+  고보경        → ko-bogyeong.jpg
+  강은주, 한호정   → han-hojeong_kang-eunju.jpg
+  김선아        → kim-seona.jpg
+  김채은        → kim-chaeeun.jpg
+  박시연        → park-siyeon.jpg
+  반가인        → ban-gain.jpg
+  백지윤        → baek-jiyoun.jpg
+  이고은        → lee-goeun.jpg
+
+■ 영상 (video)
+  고보경, 박시연   → ko-bogyeong_park-siyeon.jpg
+  강은주, 최고은   → choi-goeun_kang-eunju.jpg
+  김채은, 한호정   → han-hojeong_kim-chaeeun.jpg
+  백지윤        → baek-jiyoun.jpg
+  안혜원, 정윤서   → an-hyewon_jeong-yoonseo.jpg
+
+[전체 학생 파일이름]
+
+  가 은    ka-eun
+  고보경    ko-bogyeong
+  강은주    kang-eunju
+  김아연    kim-ayeon
+  김온슬    kim-onseul
+  김선아    kim-seona
+  김채은    kim-chaeeun
+  민찬우    min-chanwoo
+  반가인    ban-gain
+  박시연    park-siyeon
+  박지희    park-jihee
+  백지윤    baek-jiyoun
+  서동윤    seo-dongyoon
+  서준원    seo-junwon
+  서하빈    seo-habin
+  신지혜    shin-jihye
+  안혜원    an-hyewon
+  양서안    yang-seoan
+  이강찬    lee-kangchan
+  이고은    lee-goeun
+  이기훈    lee-gihun
+  이소연    lee-soyeon
+  이지민    lee-jimin
+  제선우    je-seonu
+  정유리    jung-yuri
+  정윤서    jeong-yoonseo
+  조서빈    cho-seobin
+  채한주    chae-hanju
+  최고은    choi-goeun
+  최유민    choi-yumin
+  최은서    choi-eunseo
+  한호정    han-hojeong
