@@ -69,6 +69,13 @@
 }
 /* 졸업준비위원회: 위원장·부위원장·기획부장을 '기획부' 아래로 묶음 */
 .committee .chairs-dept { font-size: 14px; font-weight: 700; margin-bottom: 15px; }
+/* 졸업준비위원회 이름 배치: 위원장·부위원장을 아래 줄 왼쪽 끝에 맞춤 */
+.committee-board { width: fit-content; max-width: 100%; margin: 0 auto; }
+.committee .chairs { justify-content: flex-start; gap: 37px; margin-bottom: 62px; }
+.committee .heads  { justify-content: flex-start; gap: 64px; }
+@media (max-width: 760px) {
+  .committee .chairs, .committee .heads { gap: 24px; }
+}
 </style>
 
 </head>
@@ -121,19 +128,20 @@
 
   <section class="committee">
     <h3 class="reveal">46회 졸업준비위원회</h3>
-    <div class="chairs-dept reveal">기획부</div>
+    <div class="committee-board">
     <div class="chairs reveal">
       <div class="c"><b>위원장</b><span>안혜원</span></div>
       <div class="c"><b>부위원장</b><span>신지혜</span></div>
-      <div class="c"><b>&nbsp;</b><span>조서빈</span></div>
     </div>
     <div class="heads reveal">
+      <div class="c"><b>기획부</b><span>조서빈</span></div>
       <div class="c"><b>편집부</b><span>최은서</span></div>
       <div class="c"><b>디피부</b><span>이기훈</span></div>
       <div class="c"><b>멀티부</b><span>고보경</span></div>
       <div class="c"><b>홍보부</b><span>김온슬</span></div>
       <div class="c"><b>그래픽부</b><span>반가인</span></div>
       <div class="c"><b>총무부</b><span>정윤서</span></div>
+    </div>
     </div>
   </section>
 
