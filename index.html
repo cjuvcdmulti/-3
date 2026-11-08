@@ -17,6 +17,9 @@
   opacity: 0 !important;
 }
 .home-hero video { pointer-events: none; }
+/* 실제로 재생이 시작되기 전(자동 재생이 막혔을 때 등)에는 영상을 숨김 → 브라우저 기본 재생 버튼·재생바가 보이지 않음 */
+.home-hero video { opacity: 0; transition: opacity .4s ease; }
+.home-hero video.is-playing { opacity: 1; }
 </style>
 </head>
 <body>
@@ -35,7 +38,7 @@
 </header>
 <main class="home-hero">
   <!-- ★ 홈 메인: 모션 영상 (videos/main.mp4) — 자동 재생/반복 -->
-  <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback>
+  <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback">
     <source src="videos/main.mp4" type="video/mp4">
   </video>
 </main>
@@ -48,6 +51,11 @@
   v.muted = true;            // 음소거를 스크립트로도 확실히 지정 (자동 재생 조건)
   v.defaultMuted = true;
   v.removeAttribute('controls');
+  v.controls = false;
+  // 재생 중일 때만 영상 표시, 멈추면(저전력 모드 등) 다시 숨김 → 재생바가 화면에 안 보임
+  v.addEventListener('playing', function () { v.classList.add('is-playing'); });
+  v.addEventListener('pause', function () { v.classList.remove('is-playing'); tryPlay(); });
+  if (!v.paused && v.readyState > 2) v.classList.add('is-playing');
   function tryPlay() {
     var p = v.play();
     if (p && p.catch) p.catch(function () {});
