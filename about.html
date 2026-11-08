@@ -70,12 +70,15 @@
 /* 졸업준비위원회: 위원장·부위원장·기획부장을 '기획부' 아래로 묶음 */
 .committee .chairs-dept { font-size: 14px; font-weight: 700; margin-bottom: 15px; }
 /* 졸업준비위원회 이름 배치: 위원장·부위원장을 아래 줄 왼쪽 끝에 맞춤 */
-.committee-board { width: fit-content; max-width: 100%; margin: 0 auto; }
+.committee-board { width: 900px; max-width: 90%; margin: 0 auto; } /* 아래 부서별 설명(.dept-list 900px)과 같은 폭·같은 가운데 → 좌우 끝선 일치 */
 .committee .chairs { justify-content: flex-start; gap: 37px; margin-bottom: 62px; }
-.committee .heads  { justify-content: flex-start; gap: 64px; }
+.committee .heads  { justify-content: space-between; gap: 0; } /* 부서 7개를 900px 폭에 고르게 펼침 */
 @media (max-width: 760px) {
   .committee .chairs, .committee .heads { gap: 24px; }
+  .committee .heads { justify-content: flex-start; }
 }
+/* 부서별 설명: style.css의 left:60px(오른쪽으로 밀림) 취소 → 페이지 가운데 정렬 */
+.dept-list { left: 0; }
 </style>
 
 </head>
@@ -152,7 +155,7 @@
     </div>
     <div class="dept reveal">
       <div class="d-desc"><b>편집부</b><p>졸업전시의 편집물 제작을 담당하는 부서이다.<br>학생 개개인의 작품을 체계적으로 정리하고 편집 디자인을 진행한다.<br>졸업 전시의 콘셉트를 고려하여 도록의 콘셉트, 레이아웃, 타이포그래피 등 인쇄 제작 전 과정을 관리한다.</p></div>
-      <div class="d-members"><p>편집부장 : 최은서</p><p>부원 : 가 은, 박지희, 서동윤, 제선우, 최고은</p></div>
+      <div class="d-members"><p>편집부장 : 최은서</p><p>부원 : 가은, 박지희, 서동윤, 제선우, 최고은</p></div>
     </div>
     <div class="dept reveal">
       <div class="d-desc"><b>디피부</b><p>전시 공간의 구조와 배치를 담당하는 부서이다. 실제 전시장의 구성 전반을 기획하고 설치한다. 작품의 배치, 조명, 동선 등을 고려하여  관람객이 전시를 효과적으로 경험할 수 있는 공간 디자인을 완성한다.</p></div>
@@ -179,7 +182,7 @@
       <div class="k">지도 교수님</div>
       <div class="v">신석규&nbsp;&nbsp;&nbsp;서경원&nbsp;&nbsp;&nbsp;서진수&nbsp;&nbsp;&nbsp;김태호</div>
       <div class="k">제작</div>
-      <div class="v">도록 제작 : 최은서, 서동윤, 박지희, 신지혜, 제선우, 최고은<br>포스터 제작 : 반가인, 민찬우, 채한주, 서하빈, 정윤서, 양서안<br>웹사이트 제작 : 고보경, 한호정, 김아연, 서준원, 강은주, 김선아</div>
+      <div class="v">도록: 최은서, 서동윤, 박지희, 신지혜, 제선우, 최고은<br>포스터: 반가인, 민찬우, 채한주, 서하빈, 정윤서, 양서안<br>웹사이트: 고보경, 한호정, 김아연, 서준원, 강은주, 김선아</div>
     </div>
   </section>
 
