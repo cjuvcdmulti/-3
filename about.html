@@ -70,15 +70,18 @@
 /* 졸업준비위원회: 위원장·부위원장·기획부장을 '기획부' 아래로 묶음 */
 .committee .chairs-dept { font-size: 14px; font-weight: 700; margin-bottom: 15px; }
 /* 졸업준비위원회 이름 배치: 위원장·부위원장을 아래 줄 왼쪽 끝에 맞춤 */
-.committee-board { width: 900px; max-width: 90%; margin: 0 auto; } /* 아래 부서별 설명(.dept-list 900px)과 같은 폭·같은 가운데 → 좌우 끝선 일치 */
+.committee-board { width: fit-content; max-width: 100%; margin: 0 auto; }
 .committee .chairs { justify-content: flex-start; gap: 37px; margin-bottom: 62px; }
-.committee .heads  { justify-content: space-between; gap: 0; } /* 부서 7개를 900px 폭에 고르게 펼침 */
+.committee .heads  { justify-content: flex-start; gap: 64px; }
 @media (max-width: 760px) {
   .committee .chairs, .committee .heads { gap: 24px; }
-  .committee .heads { justify-content: flex-start; }
 }
 /* 부서별 설명: style.css의 left:60px(오른쪽으로 밀림) 취소 → 페이지 가운데 정렬 */
 .dept-list { left: 0; }
+/* 부서별 설명 오른쪽 열(부장·부원)을 오른쪽 끝으로 밀고 모든 부서에서 같은 위치에서 시작 (왼쪽 설명 폭은 그대로) */
+@media (min-width: 761px) {
+  .dept { grid-template-columns: minmax(0, 445px) 270px; justify-content: space-between; }
+}
 </style>
 
 </head>
