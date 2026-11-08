@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOME | 경계주의 - 청주대학교 시각디자인학과 제46회 졸업전시회</title>
 <link rel="stylesheet" href="css/style.css">
+<!-- 홈 영상: 아이폰·사파리에서 뜨는 재생 버튼/컨트롤 숨기기 -->
+<style>
+.home-hero video::-webkit-media-controls,
+.home-hero video::-webkit-media-controls-panel,
+.home-hero video::-webkit-media-controls-play-button,
+.home-hero video::-webkit-media-controls-start-playback-button,
+.home-hero video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0 !important;
+}
+.home-hero video { pointer-events: none; }
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -22,10 +35,30 @@
 </header>
 <main class="home-hero">
   <!-- ★ 홈 메인: 모션 영상 (videos/main.mp4) — 자동 재생/반복 -->
-  <video autoplay muted loop playsinline preload="auto">
+  <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback>
     <source src="videos/main.mp4" type="video/mp4">
   </video>
 </main>
 <script src="js/main.js"></script>
+<!-- 홈 영상 자동 재생 보강: 브라우저가 막으면 다시 시도하고, 그래도 막히면 첫 터치·스크롤·클릭 때 바로 재생 -->
+<script>
+(function () {
+  var v = document.getElementById('heroVideo');
+  if (!v) return;
+  v.muted = true;            // 음소거를 스크립트로도 확실히 지정 (자동 재생 조건)
+  v.defaultMuted = true;
+  v.removeAttribute('controls');
+  function tryPlay() {
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  tryPlay();
+  v.addEventListener('loadeddata', tryPlay);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
+  ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, tryPlay, { once: true, passive: true });
+  });
+})();
+</script>
 </body>
 </html>
